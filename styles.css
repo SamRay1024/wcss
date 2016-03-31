@@ -1,0 +1,118 @@
+body { background: #2c3e50; /* midnight blue */ }
+
+header,
+section { padding: 10px 20px; }
+
+header h1 {
+	font-size: 4em;
+	color: #fff;
+}
+.slogan {
+	display: block;
+	margin-top: 0;
+	color: #e7e7e7;
+	font-size: 0.5em;
+}
+
+h1, .h1 { color: #404040; }
+h2, .h2 { color: #454545; }
+h3, .h3 { color: #505050; }
+h4, .h4 { color: #555; }
+h5, .h5 { color: #606060; }
+h6, .h6 { color: #656565; }
+
+a {
+	color: #2980b9;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+section > h1 { border-bottom: 1px solid #ccc; }
+
+section {
+	background-color: white;
+	border-left-width: 8px;
+	border-left-style: solid;
+}
+section.peter-river { border-color: #3498db; }
+section.alizarin { border-color: #e74c3c; }
+section.emerald { border-color: #2ecc71; }
+section.amethyst { border-color: #9b59b6; }
+section.carrot { border-color: #e67e22; }
+section.concrete { border-color: #95a5a6; }
+section.sun-flower { border-color: #f1c40f; }
+
+.toc {
+	padding: 10px;
+	color: #666;
+	font-size: 1.4rem;
+	background: #ecf0f1; /* clouds */
+	border: none;
+}
+.toc nav > ul {
+	list-style-type: none;
+	margin: 0;
+}
+.toc nav > ul > li {
+	margin-top: 2px;
+	padding: 4px 6px;
+	border-left-width: 4px;
+	border-left-style: solid;
+}
+.toc nav > ul > li:first-child {
+	margin-top: 0;
+}
+.toc nav > ul > li:hover {
+	background: white;
+}
+.toc nav > ul ul {
+	margin-top: 5px;
+	padding-left: 22px;
+}
+.toc li.peter-river { border-color: #3498db; }
+.toc li.alizarin { border-color: #e74c3c; }
+.toc li.emerald { border-color: #2ecc71; }
+.toc li.amethyst { border-color: #9b59b6; }
+.toc li.carrot { border-color: #e67e22; }
+.toc li.concrete { border-color: #95a5a6; }
+.toc li.sun-flower { border-color: #f1c40f; }
+
+.demo-grid {
+	margin-top: 10px;
+}
+.demo-grid .wbox {
+	padding: 6px;
+	text-align: center;
+	background-color: #bdc3c7;
+	border: 1px solid #7f8c8d;
+}
+.demo-grid code { color: black; }
+
+/* Tablet version */
+@media (min-width: 768px) {
+	
+	body { padding-right: 260px; }
+
+	section { margin: 5px; }
+
+	h1 code,
+	h2 code,
+	h3 code,
+	h4 code,
+	h5 code,
+	h6 code { float: right; }
+
+	.toc {
+		width: 260px;
+		margin: 0;
+		overflow: auto;
+	}
+}
+
+/* Desktop version */
+@media (min-width: 960px) {
+
+	.slogan { display: inline; }	
+}

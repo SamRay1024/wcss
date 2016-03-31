@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>wCSS</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+
+	<link rel="stylesheet" media="screen" href="w.css">
+	<link rel="stylesheet" media="screen" href="styles.css">
+</head>
+<body>
+
+	<header>
+		<h1>wCSS <span class="slogan">rafraîchit vos pages web</span></h1>
+	</header>
+
+	<!-- Intro -->
+	<section id="intro" class="peter-river">
+		<h1>Introduction</h1>
+		
+		<p><strong>wCSS</strong> est un framework CSS dont l'objectif est d'être le plus
+			<strong>simple</strong> et le plus <strong>rapide</strong> possible à prendre en main.
+			<strong>wCSS</strong> met en forme automatiquement un maximum de balises HTML. Pour les
+			cas où la mise en forme automatique n'est pas possible ou pas préférable, il faut alors
+			simplement ajouter les classes CSS nécessaires pour obtenir la mise en forme souhaitée.</p>
+		
+		<p><strong>wCSS</strong> propose également des outils pour échafauder vos
+			<strong>grilles</strong>. 1, 2, 3, 4, 5, 6, 8, 10, 12 ou 16 colonnes : vous aurez le
+			choix. Cela n'est pas suffisant ? Vous pouvez ajouter vos propres tailles en toute
+			simplicité !</p>
+
+		<p>Cette page de documentation est bâtie sur <strong>wCSS</strong>, adjointe d'une feuille de
+			styles supplémentaire pour rendre sa mise en page unique. Utilisez les outils de
+			votre navigateur préféré pour l'inspecter !</p>
+
+		<p>
+			Merci aux auteurs des outils/sites suivants qui m'ont grandement servi pour bâtir
+			<strong>wCSS</strong> :
+			<a href="http://necolas.github.io/normalize.css/">Normalize.css</a>,
+			<a href="http://www.knacss.com">knacss</a>,
+			<a href="http://codeguide.co/#css">Code Guide by @mdo</a>,
+			<a href="http://flatuicolors.co">flatuicolors.co</a>,
+			<a href="http://www.flatuicolorpicker.com/">flatuicolorpicker.com</a>.
+		</p>
+	</section>
+
+	<!-- Menu -->
+	<section id="toc" class="toc fixed fixed-right">
+		<nav>
+			<ul class="pan">
+				<li class="peter-river"><a href="#intro">Introduction</a></li>
+				<li class="alizarin">
+					<a href="#formatting">Mise en forme</a>
+					<ul>
+						<li><a href="#formatting-logical-content">Structure logique</a></li>
+						<li><a href="#formatting-text-content">Contenu textuel</a></li>
+						<li><a href="#formatting-semantics">Sémantique du texte</a></li>
+						<li>
+							<a href="#formatting-table-content">Contenu tabulaire</a>
+							<ul>
+								<li><a href="#formatting-table-bordered">Table bordée</a></li>
+								<li><a href="#formatting-table-bordered-hrz">Table bordée horizontalement</a></li>
+								<li><a href="#formatting-table-striped">Table alternée</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="emerald">
+					<a href="#specials">Caractères spéciaux</a>
+					<ul>
+						<li><a href="#specials-latin">Tests des caractères latin</a></li>
+					</ul>
+				</li>
+				<li class="amethyst">
+					<a href="#buttons">Boutons</a>
+					<ul>
+						<li><a href="#buttons-default">Standards</a></li>
+						<li><a href="#buttons-sets">Ensembles</a></li>
+						<li><a href="#buttons-colors">Couleurs</a></li>
+					</ul>
+				</li>
+				<li class="carrot">
+					<a href="#forms">Formulaires</a>
+					<ul>
+						<li><a href="#forms-stacked">Empilés (défaut)</a></li>
+						<li><a href="#forms-inline">En ligne</a></li>
+						<li><a href="#forms-aligned">Alignés</a></li>
+					</ul>
+				</li>
+				<li class="sun-flower">
+					<a href="#grids">Grilles</a>
+					<ul>
+						<li><a href="#grids-uniform">Uniformes</a></li>
+						<li><a href="#grids-unequal">Inégales</a></li>
+					</ul>
+				</li>
+				<li class="concrete">
+					<a href="#helpers">Assistants</a>
+					<ul>
+						<li><a href="#helper-display">Affichage</a></li>
+						<li><a href="#helper-positioning">Positionnement</a></li>
+						<li><a href="#helper-text">Texte</a></li>
+						<li><a href="#helper-widths">Largeurs</a></li>
+						<li><a href="#helper-spacing">Espacement</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	
+	<!-- HTML Tags -->
+	<section id="formatting" class="alizarin">
+		<h1>Mise en forme</h1>
+		
+		<h2 id="formatting-logical-content">Structure logique</h2>
+		
+		<h3>Adresses <code>address</code></h3>
+
+		<address>1 Infinite Loop
+		Cupertino, CA 95014
+		United States</address>
+
+		<h3>Titres <code>h[1..6]</code></h3>
+
+		<span class="h1">Heading 1, </span>
+		<span class="h2">Heading 2, </span>
+		<span class="h3">Heading 3, </span>
+		<span class="h4">Heading 4, </span>
+		<span class="h5">Heading 5, </span>
+		<span class="h6">Heading 6.</span>
+
+		<h2 id="formatting-text-content">Contenu textuel</h2>
+
+		<h3 id="formatting-blockquotes">Citations longues <code>blockquote</code></h3>
+
+		<p>Bloc de citation sur une ligne :</p>
+		<blockquote><p>Stay hungry. Stay foolish.</p></blockquote>
+		
+		<p>Block de citation multi-lignes avec élément de citation :</p>
+		<blockquote>
+			<p>People think focus means saying yes to the thing you've got to focus on. But that's
+			not what it means at all. It means saying no to the hundred other good ideas that there
+			are. You have to pick carefully. I'm actually as proud of the things we haven't done as
+			the things I have done. Innovation is saying no to 1,000 things.</p>
+			<cite>Steve Jobs - Apple Worldwide Developers' Conference, 1997</cite>
+		</blockquote>
+
+		<h3 id="formatting-dl">Listes de définitions <code>dl</code></h3>
+
+		<dl>
+			<dt>Terme de la définition</dt>
+			<dd>Descripiton de la définition</dd>
+			<dt>Startup</dt>
+			<dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd>
+			<dt>#dowork</dt>
+			<dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd>
+			<dt>Do It Live</dt>
+			<dd>I'll let Bill O'Reilly will <a title="We'll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd>
+		</dl>
+
+		<h3 id="formatting-ol">Listes ordonnées <code>ol</code></h3>
+		
+		<ol>
+			<li>Élément de liste un
+				<ol>
+					<li>Élément de liste un
+						<ol>
+							<li>Élément de liste un</li>
+							<li>Élément de liste deux</li>
+							<li>Élément de liste trois</li>
+							<li>Élément de liste quatre</li>
+						</ol>
+					</li>
+					<li>Élément de liste deux</li>
+					<li>Élément de liste trois</li>
+					<li>Élément de liste quatre</li>
+				</ol>
+			</li>
+			<li>Élément de liste deux</li>
+			<li>Élément de liste trois</li>
+			<li>Élément de liste quatre</li>
+		</ol>
+		
+		<h3 id="formatting-ul">Listes non ordonnées <code>ul</code></h3>
+
+		<ul>
+			<li>Élément de liste un
+				<ul>
+					<li>Élément de liste un
+						<ul>
+							<li>Élément de liste un</li>
+							<li>Élément de liste deux</li>
+							<li>Élément de liste trois</li>
+							<li>Élément de liste quatre</li>
+						</ul>
+					</li>
+					<li>Élément de liste deux</li>
+					<li>Élément de liste trois</li>
+					<li>Élément de liste quatre</li>
+				</ul>
+			</li>
+			<li>Élément de liste deux</li>
+			<li>Élément de liste trois</li>
+			<li>Élément de liste quatre</li>
+		</ul>
+
+		<h3>Texte préformaté <code>pre</code></h3>
+
+		<pre><code>.post-title {
+	margin: 0 0 5px;
+	font-weight: bold;
+	font-size: 38px;
+	line-height: 1.2;
+}</code></pre>
+
+		<h2 id="formatting-semantics">Sémantique du texte</h2>
+
+		<h3>Ancres (liens) <code>a</code></h3>
+
+		<p>Ceci est un exemple de <a title="Apple" href="http://apple.com">lien</a>.</p>
+
+		<h3>Abréviations <code>abbr</code></h3>
+
+		<p>L'abréviation <abbr title="Seriously">srsly</abbr> signifie "seriously".</p>
+
+		<h3>Acronyme <code>acronym <em>obsolète</em></code></h3>
+
+		<p>L'acronyme <acronym title="mort de rire">mdr</acronym> signifie "mort de rire".</p>
+
+		<h3>Gros <code>big</code></h3>
+
+		<p>Ces tests sont <big>importants</big>, mais cette balise n'est plus supportée par HTML5.</p>
+
+		<h3>Elément de citation <code>cite</code></h3>
+
+		<p>"Code is poetry." --<cite>Automattic</cite></p>
+
+		<h3>Code <code>code</code></h3>
+
+		<p>Vous apprendrez un peu plus tard dans ces tests que <code>word-wrap: break-word;</code> sera votre meilleur ami.</p>
+
+		<h3>Suppression <code>del</code></h3>
+
+		<p>Cette balise permet de <del>barrer du texte</del>, mais elle n'est plus supporté par HTML5 (utilisez plutôt <code>&lt;strike&gt;</code> à la place).</p>
+
+		<h3>Emphase <code>em</code></h3>
+
+		<p>La balise d'emphase devrait <em>mettre en italique</em> le texte.</p>
+
+		<h3>Insertion <code>ins</code></h3>
+
+		<p>Cette balise indique du texte <ins>inséré</ins>.</p>
+
+		<h3>Saisie clavier <code>kbd</code></h3>
+
+		<p>Cette balise à peine connu émule <kbd>le texte du clavier</kbd>, qui est usuellemement mis en forme comme la balise <code>&lt;code&gt;</code>.</p>
+
+		<h3>Texte surligné <code>mark</code></h3>
+
+		<p>Ce texte est <mark>surligné</mark>.</p>
+
+		<h3>Citation courte <code>q</code></h3>
+
+		<p><q>Developers, developers, developers...</q> --Steve Ballmer</p>
+
+		<h3>Important <code>strong</code></h3>
+
+		<p>Cette balise montre du texte <strong>gras</strong>.</p>
+
+		<h3>Indice <code>sub</code></h3>
+
+		<p>On obtient notre style scientifique avec H<sub>2</sub>O, ce qui devrait abaisser le "2".</p>
+
+		<h3>Exposant <code>sup</code></h3>
+
+		<p>Encore coincé avec notre science et l'E = MC<sup>2</sup> d'Isaac Newton, qui devrait lever le 2.</p>
+
+		<h3>Téléscripteur <code>tt</code></h3>
+
+		<p>Cette balise rarement utilisée émule <tt>du texte téléscripté</tt>, qui est usuellement mis en forme comme la balise <code>&lt;code&gt;</code>.</p>
+
+		<h3>Variable <code>var</code></h3>
+
+		<p>Ceci vous permet de mettre en avant des <var>variables</var>.</p>
+
+		<!-- Tables -->
+		<h2 id="formatting-table-content">Contenu tabulaire <code>table</code></h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Acteur</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>McFly</td>
+					<td>Marty</td>
+					<td>Michael J. Fox</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Brown</td>
+					<td>Emmmet "Doc"</td>
+					<td>Christopher Llyod</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Tanner</td>
+					<td>Biff</td>
+					<td>Thomas F. Wilson</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3 id="formatting-table-bordered">Table bordée <code>.wtable-bordered</code></h3>
+
+		<table class="wtable-bordered">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Acteur</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>McFly</td>
+					<td>Marty</td>
+					<td>Michael J. Fox</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Brown</td>
+					<td>Emmmet "Doc"</td>
+					<td>Christopher Llyod</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Tanner</td>
+					<td>Biff</td>
+					<td>Thomas F. Wilson</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3 id="formatting-table-bordered-hrz">Table bordée horizontalement <code>.wtable-bordered-hrz</code></h3>
+
+		<table class="wtable-bordered-hrz">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Acteur</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>McFly</td>
+					<td>Marty</td>
+					<td>Michael J. Fox</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Brown</td>
+					<td>Emmmet "Doc"</td>
+					<td>Christopher Llyod</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Tanner</td>
+					<td>Biff</td>
+					<td>Thomas F. Wilson</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 id="formatting-table-striped">Table alternée <code>.wtable-striped</code></h2>
+
+		<table class="wtable-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Lastname</th>
+					<th scope="col">Acteur</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>McFly</td>
+					<td>Marty</td>
+					<td>Michael J. Fox</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Brown</td>
+					<td>Emmmet "Doc"</td>
+					<td>Christopher Llyod</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Tanner</td>
+					<td>Biff</td>
+					<td>Thomas F. Wilson</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<!-- Special characters -->
+	<section id="specials" class="emerald">
+		<h1>Caractères spéciaux</h1>
+
+		<h2 id="specials-latin">Tests des caractères latins</h2>
+		<p>Ceci est un test pour contrôler si la police de caractères utilisée supporte les caractères latins basiques.</p>
+		
+		<table class="wtable-bordered">
+			<tbody>
+				<tr>
+					<td>!</td>
+					<td>"</td>
+					<td>#</td>
+					<td>$</td>
+					<td>%</td>
+					<td>&amp;</td>
+					<td>'</td>
+					<td>(</td>
+					<td>)</td>
+					<td>*</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>,</td>
+					<td>-</td>
+					<td>.</td>
+					<td>/</td>
+					<td>0</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>:</td>
+					<td>;</td>
+					<td>&gt;</td>
+					<td>=</td>
+					<td>&lt;</td>
+				</tr>
+				<tr>
+					<td>?</td>
+					<td>@</td>
+					<td>A</td>
+					<td>B</td>
+					<td>C</td>
+					<td>D</td>
+					<td>E</td>
+					<td>F</td>
+					<td>G</td>
+					<td>H</td>
+				</tr>
+				<tr>
+					<td>I</td>
+					<td>J</td>
+					<td>K</td>
+					<td>L</td>
+					<td>M</td>
+					<td>N</td>
+					<td>O</td>
+					<td>P</td>
+					<td>Q</td>
+					<td>R</td>
+				</tr>
+				<tr>
+					<td>S</td>
+					<td>T</td>
+					<td>U</td>
+					<td>V</td>
+					<td>W</td>
+					<td>X</td>
+					<td>Y</td>
+					<td>Z</td>
+					<td>[</td>
+					<td>\</td>
+				</tr>
+				<tr>
+					<td>]</td>
+					<td>^</td>
+					<td>_</td>
+					<td>`</td>
+					<td>a</td>
+					<td>b</td>
+					<td>c</td>
+					<td>d</td>
+					<td>e</td>
+					<td>f</td>
+				</tr>
+				<tr>
+					<td>g</td>
+					<td>h</td>
+					<td>i</td>
+					<td>j</td>
+					<td>k</td>
+					<td>l</td>
+					<td>m</td>
+					<td>n</td>
+					<td>o</td>
+					<td>p</td>
+				</tr>
+				<tr>
+					<td>q</td>
+					<td>r</td>
+					<td>s</td>
+					<td>t</td>
+					<td>u</td>
+					<td>v</td>
+					<td>w</td>
+					<td>x</td>
+					<td>y</td>
+					<td>z</td>
+				</tr>
+				<tr>
+					<td>{</td>
+					<td>|</td>
+					<td>}</td>
+					<td>~</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<!-- Buttons -->
+	<section id="buttons" class="amethyst">
+		<h1>Boutons <code>.wbtn</code></h1>
+
+		<h2 id="buttons-default">Standards</h2>
+
+		<h3>Ancres</h3>
+		<div class="wgrid">
+			<div class="wbox wbox-3-5">
+				<p>
+					<a href="#" class="wbtn big">.big</a>
+					<a href="#" class="wbtn">standard</a>
+					<a href="#" class="wbtn small">.small</a>
+				</p>
+			</div>
+			<div class="wbox wbox-2-5">
+				<p class="pre">
+					<code>
+						&lt;a href="#" class="wbtn big"&gt;.big&lt;/a&gt;<br>
+						&lt;a href="#" class="wbtn"&gt;standard&lt;/a&gt;<br>
+						&lt;a href="#" class="wbtn small"&gt;.small&lt;/a&gt;
+					</code>
+				</p>
+			</div>
+		</div>
+		
+		<p>
+			<button class="big">.big</button>
+			<button>standard</button>
+			<button class="small">.small</button>
+			balises &lt;button /&gt;.
+		</p>
+		
+		<p>
+			<input type="submit" class="big" value=".big" />
+			<input type="submit" value="standard" />
+			<input type="submit" class="small" value=".small" />
+			balises &lt;input type="submit" /&gt;.
+		</p>
+
+		<h2 id="buttons-sets">Ensembles</h2>
+		
+		<p>
+			<a href="#" class="wbtn wbtn-left">.left</a><a 
+			href="#" class="wbtn wbtn-center">.center</a><a
+			href="#" class="wbtn wbtn-center active">.center.active</a><a
+			href="#" class="wbtn wbtn-right">.right</a>
+		</p>
+		
+		<p style="width: 200px">
+			<a href="#" class="wbtn wbtn-top active">.top.active</a>
+			<a href="#" class="wbtn wbtn-middle">.middle</a>
+			<a href="#" class="wbtn wbtn-bottom">.bottom</a>
+		</p>
+
+		<h2 id="buttons-colors">Couleurs</h2>
+
+		<h3>Etat normal</h3>
+
+		<p>
+			<a href="#" class="wbtn">default</a>
+			<a href="#" class="wbtn wbtn-black">.black</a>
+			<a href="#" class="wbtn wbtn-white">.white</a>
+			<a href="#" class="wbtn wbtn-green">.green</a>
+			<a href="#" class="wbtn wbtn-red">.red</a>
+			<a href="#" class="wbtn wbtn-blue">.blue</a>
+			<a href="#" class="wbtn wbtn-orange">.orange</a>
+			<a href="#" class="wbtn wbtn-yellow">.yellow</a>
+			<a href="#" class="wbtn wbtn-magenta">.magenta</a>
+		</p>
+
+		<h3>Etat actif</h3>
+
+		<p>
+			<a href="#" class="wbtn active">default</a>
+			<a href="#" class="wbtn active wbtn-black">.black</a>
+			<a href="#" class="wbtn active wbtn-white">.white</a>
+			<a href="#" class="wbtn active wbtn-green">.green</a>
+			<a href="#" class="wbtn active wbtn-red">.red</a>
+			<a href="#" class="wbtn active wbtn-blue">.blue</a>
+			<a href="#" class="wbtn active wbtn-orange">.orange</a>
+			<a href="#" class="wbtn active wbtn-yellow">.yellow</a>
+			<a href="#" class="wbtn active wbtn-magenta">.magenta</a>
+		</p>
+	</section>
+
+	<!-- Forms -->
+	<section id="forms" class="carrot">
+		<h1>Formulaires <code>.wform</code></h1>
+
+		<h2 id="forms-stacked">Empilés (defaut)</h2>
+	
+		<form action="#" method="post">
+			
+			<fieldset>
+				<legend>Légende</legend>
+
+				<label>Texte :<input type="text" placeholder="Texte libre"></label>
+				<label>Selecteur :<select><option>Option 1</option><option>Option 2</option></select></label>
+				<label>Selecteur multiple :<select multiple><option>Option 1</option><option>Option 2</option></select></label>
+				<label><input ty e="checkbox" value="">Case à cocher</label>
+				<label><input type="radio" value="" name="radio1">Bouton radio #1</label>
+				<label><input type="radio" value="" name="radio1">Bouton radio #2</label>
+				<label>Zone de texte :<textarea></textarea></label>
+				<label>Fichier :<input type="file"></label>
+
+				<label><input class="wbtn-primary" type="submit" name="submit" value="Soumettre"></label>
+			</fieldset>
+		</form>
+
+		<h2 id="forms-inline">En ligne<code>.inline</code></h2>
+
+		<form action="#" method="post" class="wform-inline">
+
+			<fieldset>
+				<legend>Légende #1</legend>
+
+				<input type="email" value="" placeholder="Courriel">
+				<input type="password" value="" placeholder="Mot de passe">
+				<label class="check"><input type="checkbox" value="">Se souvenir de moi</label>
+
+				<input class="wbtn-primary" type="submit" name="submit" value="Soumettre">
+			</fieldset>
+		</form>
+
+		<form action="#" class="wform-inline" method="post">
+			
+			<fieldset>
+				<legend>Légende #2</legend>
+
+				<label>Selecteur : <select><option>Option 1</option><option>Option 2</option></select></label>
+				<label>Fichier : <input type="file"></label>
+
+				<input class="wbtn-primary" type="submit" name="submit" value="Soumettre">
+			</fieldset>
+		</form>
+
+		<h2 id="forms-aligned">Aligné <code>.aligned</code></h2>
+
+		<form action="#" method="post" class="wform-aligned">
+
+			<fieldset>
+				<legend>Exemples standards</legend>
+
+				<div class="wfield">
+					<label for="1">Standard :</label>
+					<div class="winput">
+						<input type="text" value="" placeholder="Texte libre" id="1">
+					</div>
+				</div>
+				
+				<div class="wfield">
+					<label for="2">Désactivé :</label>
+					<div class="winput">
+						<input type="text" value="Etat désactivé" disabled id="2">
+					</div>
+				</div>
+
+				<div class="wfield">
+					<label for="3">Lecture seule :</label>
+					<div class="winput">
+						<input type="text" value="Ecriture impossible" readonly id="3">
+					</div>
+				</div>
+
+				<div class="wfield">
+					<label for="4">Requis :</label>
+					<div class="winput">
+						<input type="text" placeholder="Valeur requise" required id="4">
+					</div>
+				</div>
+				
+				<div class="wfield">
+					<span class="label">Libellé :</span>
+					<div class="winput inline">
+						<label><input type="checkbox" value="">Une case à cocher</label>
+						<label><input type="checkbox" value="">Une case à cocher</label>
+						<label><input type="checkbox" value="">Une case à cocher</label>
+						<label><input type="checkbox" value="">Une case à cocher</label>
+						<label><input type="checkbox" value="">Une case à cocher</label>
+						<label><input type="checkbox" value="">Une case à cocher</label>
+					</div>
+				</div>
+
+				<div class="wfield">
+					<div class="winput">
+						<label><input type="checkbox" value="">Une case à cocher</label>
+					</div>
+				</div>
+
+				<div class="wfield mleft">
+					<div class="winput">
+						<label><input type="radio" value="" name="radio1">Bouton radio #1</label>
+						<label><input type="radio" value="" name="radio1">Bouton radio #2</label>
+					</div>
+				</div>
+
+				<div class="wfield mleft">
+					<label>Sélecteur requis :</label>
+					<div class="winput">
+						<select required><option>Option 1</option><option>Option 2</option></select>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Tailles</legend>
+
+				<div class="wfield">
+					<label>Inputs, tailles fixes</label>
+					<div class="winput">
+						<input type="text" value="" placeholder="Extra small size" class="xsmall">
+						<input type="text" value="" placeholder="Small size" class="small">
+						<input type="text" value="" placeholder="Standard size">
+						<input type="text" value="" placeholder="Large size" class="large">
+						<input type="text" value="" placeholder="Extra large size" class="xlarge">
+					</div>
+				</div>
+
+				<div class="wfield">
+					<label>Inputs, tailles proportionnelles</label>
+					<div class="winput">
+						<input type="text" value="" placeholder="1/4 size" class="w25">
+						<input type="text" value="" placeholder="Half size" class="w50">
+						<input type="text" value="" placeholder="3/4 size" class="w75">
+						<input type="text" value="" placeholder="Full size" class="w100">
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="wfield">
+				<input class="wbtn-primary" type="submit" name="submit" value="Soumettre">
+			</div>
+		</form>
+	</section>
+
+	<!-- Grid -->
+	<section id="grids" class="sun-flower">
+		<h1>Grilles <code>.wgrid</code></h1>
+		
+		<p>Le système de grille CSS est intégralement basé sur 
+			<a href="http://arnaudleray.github.io/pocketgrid/">PocketGrid</a>, fait par Arnaud Leray.
+			Vous pouvez vous référer à sa documentation pour apprendre à jouer avec.</p>
+
+		<p>Quelques ajustements et améliorations ont été apportés dans wCSS pour vous aider à construire
+			vos gabarits aussi vite que possible. Voici ce que vous devez savoir :</p>
+
+		<ul>
+			<li>Vous démarrez une grille avec un <code>.wgrid</code>. C'est comme une ligne (souvent
+				ciblée par <code>.row</code>), mais pas seulement,</li>
+			<li>Les colonnes sont des <code>.wbox</code>,</li>
+			<li>La grille est "mobile-first", donc <code>.wbox</code> démarre avec une largeur de 100%,</li>
+			<li>Vous pouvez définir toutes vos largeurs en pourcentages.</li>
+		</ul>
+
+		<h2 id="grids-uniform">Grilles uniformes</h2>
+		
+		<p>Dans les grilles uniformes, toutes les boîtes ont la même taille. Vous définissez la
+			taille des boîtes depuis l'élément <code>.wgrid</code>.</p>
+
+		<pre><code>&lt;div class="wgrid <u>wgridX</u>"&gt;
+	&lt;div class="wbox"&gt;...&lt;/div&gt;
+	...
+&lt;/div&gt;</code></pre>
+
+		<h3>Pleine <code>.wgrid</code></h3>
+		<div class="wgrid demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/2<code>.wgrid.wgrid2</code></h3>
+		<div class="wgrid wgrid2 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/3<code>.wgrid.wgrid3</code></h3>
+		<div class="wgrid wgrid3 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/4<code>.wgrid.wgrid4</code></h3>
+		<div class="wgrid wgrid4 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/5<code>.wgrid.wgrid5</code></h3>
+		<div class="wgrid wgrid5 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/6<code>.wgrid.wgrid6</code></h3>
+		<div class="wgrid wgrid6 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/8<code>.wgrid.wgrid8</code></h3>
+		<div class="wgrid wgrid8 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/10<code>.wgrid.wgrid10</code></h3>
+		<div class="wgrid wgrid10 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+		
+		<h3>1/12<code>.wgrid.wgrid12</code></h3>
+		<div class="wgrid wgrid12 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h3>1/16<code>.wgrid.wgrid16</code></h3>
+		<div class="wgrid wgrid16 demo-grid mtm">
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+			<div class="wbox"><code>.wbox</code></div>
+		</div>
+
+		<h2 id="grids-unequal">Grilles inégales</h2>
+
+		<p>Dans une grille inégale, les boîtes d'une même ligne ont des tailles différentes. Les
+			largeurs des boîtes ne sont pas définies depuis <code>.wgrid</code> mais sur chaque
+			<code>.wbox</code> avec une classe <code>.wbox-x-x</code>.</p>
+
+		<pre><code>&lt;div class="wgrid"&gt;
+	&lt;div class="wbox <u>wbox-1-3</u>"&gt;...&lt;/div&gt;
+	&lt;div class="wbox <u>wbox-2-3</u>"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+		<h3>Toutes les tailles<code>.wbox-x-x</code></h3>
+
+		<div class="wgrid demo-grid mtm">
+			<div class="wbox wbox-1-16">1-16</div>
+			<div class="wbox wbox-15-16">15-16</div>			
+
+			<div class="wbox wbox-1-12">1-12</div>
+			<div class="wbox wbox-11-12">11-12</div>
+
+			<div class="wbox wbox-1-10">1-10</div>
+			<div class="wbox wbox-9-10">9-10</div>
+			
+			<div class="wbox wbox-1-8">1-8</div>
+			<div class="wbox wbox-7-8">7-8</div>
+			
+			<div class="wbox wbox-1-6">1-6</div>
+			<div class="wbox wbox-5-6">5-6</div>
+
+			<div class="wbox wbox-1-5">1-5</div>
+			<div class="wbox wbox-4-5">4-5</div>
+
+			<div class="wbox wbox-1-4">1-4</div>
+			<div class="wbox wbox-3-4">3-4</div>
+
+			<div class="wbox wbox-3-10">3-10</div>
+			<div class="wbox wbox-7-10">7-10</div>
+
+			<div class="wbox wbox-1-3">1-3</div>
+			<div class="wbox wbox-2-3">2-3</div>
+
+			<div class="wbox wbox-3-8">3-8</div>
+			<div class="wbox wbox-5-8">5-8</div>
+
+			<div class="wbox wbox-2-5">2-5</div>
+			<div class="wbox wbox-3-5">3-5</div>
+
+			<div class="wbox wbox-5-12">5-12</div>
+			<div class="wbox wbox-7-12">7-12</div>
+			
+			<div class="wbox wbox-1-2">1-2</div>
+			<div class="wbox wbox-1-2">1-2</div>
+
+			<div class="wbox">.wbox</div>
+		</div>
+
+		<p>Avec ça, vous êtes libre de faire quelques combinaisons différentes !</p>
+	</section>
+
+	<!-- Helpers -->
+	<section id="helpers" class="concrete">
+		<h1>Assistants</h1>
+
+		<p>
+			Cette section rassemble des classes visuelles et utilitaires pratiques pour compléter votre
+			échafaudage et alléger vos feuilles de styles.
+		</p>
+
+		<p>
+			<strong>Mise en garde :</strong> attention aux abus de ce type de classes ! L'overdose de
+			classes appliquées sur des éléments qui sont répétés de nombreuses fois au sein de vos pages
+			va alourdir votre code HTML (en plus de le rendre illisible). Exemple avec une galerie
+			d'images : il est préférable dans ce cas d'utiliser une seule classe dédiée appliquée à
+			chaque image.
+		</p>
+
+		<p>
+			<strong>Proposition de méthode :</strong> choisissez de vous limiter à 4 classes maximum
+			par élément. Si vous devez dépasser cette limite, c'est qu'il est nécessaire de créer une
+			classe pour votre élément.
+		</p>
+
+		<h2 id="helper-display">Affichage</h2>
+
+		<p>Les versions <code>-mobile</code> s'appliquent jusqu'à 768px de largeur d'écran.</p>
+
+		<table class="w100 wtable-bordered-hrz">
+			<thead>
+				<tr>
+					<th class="w30">Classes</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>.inbl</code></td>
+					<td>Appliquer <code>display: inline-block;</code> à un élément.</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.hidden</code><br />
+						<code>.hidden-mobile</code>
+					</td>
+					<td>Masquer un élément = <code>display: none;</code>.</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.invisible</code><br />
+						<code>.invisible-mobile</code>
+					</td>
+					<td>Rendre un élément invisible = <code>visibility: hidden;</code>.</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 id="helper-positioning">Positionnement</h2>
+		<table class="w100 wtable-bordered-hrz">
+			<thead>
+				<tr>
+					<th class="w30">Classes</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>.absoluted</code></td>
+					<td>Applique <code>position: absolute;</code> à un élément.</td>
+				</tr>
+				<tr>
+					<td><code>.fixed</code></td>
+					<td>Fixe (<code>position: fixed;</code>) un élément.</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.absoluted-*</code><br />
+						<code>.fixed-*</code><br />
+						* = <code>top|right|bottom|left</code>
+					</td>
+					<td>A utiliser en complément de <code>.(absoluted|fixed)</code> pour appliquer
+						le positionnement absolu ou fixé dans l'une des quatre directions.<br />
+						Exemple : <code>&lt;div class="fixed fixed-top"&gt;</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.left</code><br />
+						<code>.right</code><br />
+						<code>.center</code>
+					</td>
+					<td>Positionne un élément (<code>float</code>, <code>margin</code>).</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.clear</code><br />
+						<code>.clearl</code><br />
+						<code>.clearr</code>
+					</td>
+					<td>
+						Applique un <code>clear</code>.<br />
+						Respectivement <code>both</code>, <code>left</code>, <code>right</code>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 id="helper-text">Texte</h2>
+		<table class="w100 wtable-bordered-hrz">
+			<thead>
+				<tr>
+					<th class="w30">Classes</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<code>.xsmall</code><br />
+						<code>.small</code><br />
+						<code>.big</code><br />
+						<code>.bigger</code><br />
+						<code>.biggest</code>
+					</td>
+					<td>Modifie la taille du texte (<code>font-size</code>).</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.light</code><br />
+						<code>.normal</code><br />
+						<code>.strong</code>
+					</td>
+					<td>Modifie l'épaisseur du texte (<code>font-weight</code>).</td>
+				</tr>
+				<tr>
+					<td><code>.em</code></td>
+					<td>Met le texte en italique (<code>font-style</code>).</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.tle</code><br />
+						<code>.tri</code><br />
+						<code>.tce</code><br />
+						<code>.tju</code>
+					</td>
+					<td>
+						Modifie l'alignement du texte (<code>text-align</code>).<br />
+						Respectivement : <code>left</code>, <code>right</code>, <code>center</code>,
+						<code>justify</code>.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.vtop</code><br />
+						<code>.vmid</code><br />
+						<code>.vbot</code><br />
+						<code>.vbas</code>
+					</td>
+					<td>
+						Modifie l'alignement vertical (<code>vertical-align</code>).<br />
+						Respectivement : <code>top</code>, <code>middle</code>, <code>bottom</code>,
+						<code>baseline</code>.
+					</td>
+				</tr>
+				<tr>
+					<td><code>.lcase</code>, <code>.ucase</code></td>
+					<td>
+						Modifie la casse du texte (<code>text-transform</code>).<br />
+						Respectivement : <code>lowercase</code>, <code>uppercase</code>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 id="helper-widths">Largeurs</h2>
+		<table class="w100 wtable-bordered-hrz">
+			<thead>
+				<tr>
+					<th class="w30">Classes</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>.w10</code> à <code>.w100</code></td>
+					<td>Affecte la taille d'un élément en pourcentages, par pas de 10.</td>
+				</tr>
+				<tr>
+					<td><code>.w25</code> et <code>.w75</code></td>
+					<td>Tailles particulières de 25% et 75%.</td>
+				</tr>
+				<tr>
+					<td><code>.w8</code>, <code>.w33</code> et <code>.w66</code></td>
+					<td>Tailles particulières de 8% (1/12), 33% (1/3) et 66% (2/3).</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.w50p</code><br />
+						<code>.w100p</code><br />
+						<code>.w150p</code><br />
+						<code>.w200p</code><br />
+						<code>.w300p</code><br />
+						<code>.w400p</code><br />
+						<code>.w500p</code><br />
+						<code>.w600p</code><br />
+						<code>.w700p</code><br />
+						<code>.w800p</code><br />
+						<code>.w960p</code><br />
+						<code>.w1140p</code>
+					</td>
+					<td>
+						Affecte la taille d'un élément par une largeur fixe en pixel. La valeur de
+						la classe est la taille appliquée.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>.mw960p</code><br />
+						<code>.mw1140p</code><br />
+						<code>.wauto</code>
+					</td>
+					<td>
+						Les classes <code>.mwXXXp</code> affectent <code>max-width</code> et
+						<code>.wauto</code> applique la largeur automatique.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 id="helper-spacing">Espacement</h2>
+
+		<p>
+			Les assistants d'espacement permettent d'agir sur les marges (internes et externes). Ils
+			sont la concaténation de trois éléments :
+		</p>
+
+		<ol>
+			<li><strong>p, m</strong> = padding, margin</li>
+			<li><strong>a, t, r, b, l</strong> = all, top, right, bottom, left</li>
+			<li><strong>n, xs, s, m, l, xl</strong> = note, extra small, small, medium, large, extra large</li>
+		</ol>
+
+		<p>Les valeurs des tailles sont les suivantes :</p>
+
+		<table class="w100 wtable-bordered-hrz">
+			<thead>
+				<tr>
+					<th>n</th>
+					<th>xs</th>
+					<th>s</th>
+					<th>m</th>
+					<th>l</th>
+					<th>xl</th>
+				</tr>
+			</thead>
+			<tbody>
+				<td>0</td>
+				<td>5px</td>
+				<td>10px</td>
+				<td>20px</td>
+				<td>40px</td>
+				<td>80px</td>
+			</tbody>
+		</table>
+
+		<p>Exemples :</p>
+
+		<ul>
+			<li><code>.man</code>, <code>.pan</code> signifient "margin all none" et "padding all none",</li>
+			<li><code>.mtl</code> signifie "margin top large",</li>
+			<li><code>.prxl</code> signigie "padding right extra large".</li>
+		</ul>
+	</section>
+</body>
+</html>
