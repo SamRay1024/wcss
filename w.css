@@ -1,7 +1,7 @@
 /*!
  * w.css
  *
- * @version 0.1
+ * @version 0.2
  * @author Cedric Ducarre <http://cedric.ducarre.org>
  * @copyright WTFPL License <http://www.wtfpl.net/>
  * @see http://www.knacss.com which some rules comes from.
@@ -404,6 +404,18 @@ input[type="reset"].active {
 	background-color: #bbb;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAeCAYAAADtlXTHAAAACXBIWXMAAAsSAAALEgHS3X78AAAALklEQVQImX3NsQ0AIAzEwONhPfYfJ5QRBTSWK1tVJRhBgnnbH+trT3S+vwkq2AfpvgTRS//ELgAAAABJRU5ErkJggg==);
 	background-position: 0 1px;
+}
+
+button[disabled],
+.wbtn[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled] {
+	background: #ccc !important;
+	border-color: #bbb !important;
+	color: #aaa !important;
+	text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 !important;
+	cursor: default;
+	pointer-events: none;
 }
 
 /* Sizes */
