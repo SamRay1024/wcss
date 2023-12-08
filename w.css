@@ -6,8 +6,7 @@
  * @copyright WTFPL License <http://www.wtfpl.net/>
  * @see http://www.knacss.com which some rules comes from.
  * @see http://codeguide.co/#css which inspired some practices in this file.
- * @see http://flatuicolors.co/
- * @see http://www.flatuicolorpicker.com/
+ * @see https: //tailwindcolor.com/
  */
 
 /*! normalize.css v3.0.2 | MIT License | github.com/necolas/normalize.css */
@@ -269,7 +268,7 @@ pre code,
 }
 
 /* Clearfix */
-.wgrid { *zoom: 1; }
+.wgrid { zoom: 1; }
 .wgrid:before, .wgrid:after {
 	display: table;
 	content: '';
@@ -638,6 +637,7 @@ select,
 textarea {
 	padding: 5px;
 	border: 1px solid #ddd;
+	border-radius: 4px;
 }
 
 input[type=radio],
@@ -659,7 +659,7 @@ input:focus,
 select:focus,
 textarea:focus {
 	border-color: #3498DB;
-	box-shadow: 0 0 0 2px #E4F1FE;
+	box-shadow: 0 0 0 4px #E4F1FE;
 	outline: 0 none;
 }
 
@@ -687,9 +687,23 @@ textarea[readonly] {
 input[required]:focus,
 select[required]:focus,
 textarea[required]:focus {
+	border-color: #8b5cf6;
+	box-shadow: 0 0 0 4px #ede9fe;
+}
+
+input.valid,
+select.valid,
+textarea.valid {
+	border-color: #22c55e;
+	box-shadow: 0 0 0 4px #dcfce7;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
 	color: firebrick;
 	border-color: firebrick;
-	box-shadow: 0 1px 1px rgba(255, 0, 0, 0.075) inset;
+	box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.075);
 }
 
 /* Inline form */
