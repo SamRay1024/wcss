@@ -252,6 +252,10 @@ pre code,
 	background: none;
 	color: inherit;
 }
+figcaption {
+	font-style: italic;
+	color: rgba(0, 0, 0, 0.7);
+}
 
 /* ==wgrid ------------------------------ */
 
@@ -838,28 +842,28 @@ th { background-color: #e0e0e0; }
 .hidden { display: none; }
 .invisible { visibility: hidden; }
 
-.absoluted { position: absolute; }
-.fixed { position: fixed; }
-.absoluted-top,
-.fixed-top {
+.abs { position: absolute; }
+.fix { position: fixed; }
+.abs-top,
+.fix-top {
 	top: 0;
 	right: 0;
 	left: 0;
 }
-.absoluted-right,
-.fixed-right {
+.abs-right,
+.fix-right {
 	top: 0;
 	right: 0;
 	bottom: 0;
 }
-.absoluted-bottom,
-.fixed-bottom {
+.abs-bottom,
+.fix-bottom {
 	right: 0;
 	bottom: 0;
 	left: 0;
 }
-.absoluted-left,
-.fixed-left {
+.abs-left,
+.fix-left {
 	top: 0;
 	bottom: 0;
 	left: 0;
