@@ -671,6 +671,9 @@ textarea:focus {
 	margin-top: .75em;
 	margin-bottom: 0;
 }
+.wfield:first-child {
+	margin-top: 0;
+}
 
 /* Status */
 input[disabled],
