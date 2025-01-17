@@ -32,7 +32,7 @@ a:hover {
 section > h1 { border-bottom: 1px solid #ccc; }
 
 section {
-	background-color: white;
+	background-color: #fcfcfc;
 	border-left-width: 8px;
 	border-left-style: solid;
 }
@@ -89,6 +89,13 @@ section.sun-flower { border-color: #f1c40f; }
 	border: 1px solid #7f8c8d;
 }
 .demo-grid code { color: black; }
+
+.sample {
+	padding: 30px;
+	margin-bottom: var(--wcss-typo-spacing-vertical);
+	background-color: white;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
 
 /* Tablet version */
 @media (min-width: 768px) {
