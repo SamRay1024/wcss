@@ -35,6 +35,8 @@ summary { display: list-item }
 
 :root {
 	--wcss-typo-spacing-vertical: 1rem;
+	--wcss-border-radius-default: 4px;
+	--wcss-text-background-padding: .1em .2em;
 }
 
 /* ==base ------------------------------- */
@@ -215,16 +217,24 @@ code,
 mark,
 tt,
 var {
-	padding: 1px 2px;
+	padding: var(--wcss-text-background-padding);
 	color: #7f8c8d;
 	background-color: rgba(0, 0, 0, .05);
+	border-radius: var(--wcss-border-radius-default);
 }
 mark { background-color: #ff7; }
 dt { font-weight: bold; }
+kbd {
+	padding: var(--wcss-text-background-padding);
+	background-color: #666;
+	border-radius: var(--wcss-border-radius-default);
+	color: #fefefe;
+}
 pre,
 .pre {
 	padding: .75em;
 	background-color: #ecf0f1;
+	border-radius: var(--wcss-border-radius-default);
 }
 pre code,
 .pre code {
@@ -357,9 +367,9 @@ input[type="button"] {
 	white-space: nowrap;
 	background: #dfdfdf;
 	border: 1px solid #666;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: var(--wcss-border-radius-default);
+	-moz-border-radius: var(--wcss-border-radius-default);
+	border-radius: var(--wcss-border-radius-default);
 	cursor: pointer;
 }
 
@@ -613,13 +623,14 @@ input[type=button].wbtn-black {
 
 fieldset {
 	border: 1px solid #c0c0c0;
+	border-radius: var(--wcss-border-radius-default);
 	margin: 0 2px;
 }
 legend {
 	padding: 0 10px;
 	box-sizing: border-box;
 	font-size: 1.1em;
-	border-radius: 3px;
+	border-radius: var(--wcss-border-radius-default);
 }
 input,
 select,
@@ -654,7 +665,7 @@ select,
 textarea {
 	padding: 5px;
 	border: 1px solid #ddd;
-	border-radius: 4px;
+	border-radius: var(--wcss-border-radius-default);
 }
 
 input[type=radio],
